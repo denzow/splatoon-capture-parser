@@ -1,0 +1,16 @@
+version: '3.0'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/app/Dockerfile
+    entrypoint: '/app/docker/app/entrypoint.dev.sh'
+    command: poetry run jupyter notebook --allow-root --ip=* --no-browser --NotebookApp.token='' --NotebookApp.password=''
+    working_dir: /app
+    volumes:
+      - ./docker/app/.bashrc:/root/.bashrc:ro
+      - .:/app:cached
+    ports:
+      - "8123:8888"
+    environment:
+      ENV: local
