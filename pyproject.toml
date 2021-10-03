@@ -10,6 +10,7 @@ opencv-python = "^4.5.3"
 jupyter = "^1.0.0"
 jupyterlab = "^3.1.13"
 matplotlib = "^3.4.3"
+pyocr = "^0.8"
 
 [tool.poetry.dev-dependencies]
 
